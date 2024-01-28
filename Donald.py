@@ -27,7 +27,7 @@ scaler = StandardScaler(inputCol='features', outputCol='scaled_features')
 scaler_model = scaler.fit(df_assembled)
 df_scaled = scaler_model.transform(df_assembled)
 
-num_clusters = int(input("Escriba el numero de clusteres: "))
+num_clusters = 3
 
 # Crear un objeto FuzzyCMeans
 fcm = FuzzyCMeans(featuresCol='scaled_features', k=num_clusters, maxIter=100, seed=42)
